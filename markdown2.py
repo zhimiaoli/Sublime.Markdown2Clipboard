@@ -841,13 +841,13 @@ class Markdown(object):
             rows.append(row)
         #pprint(rows)
         hlines = ['<table>', '<tbody>']
-        hrow = ['<th>']
+        hrow = ['<tr>']
         for cell in rows[0]:
-            hrow.append('<td>')
+            hrow.append('<th>')
             hrow.append(self._run_span_gamut(cell))
-            hrow.append('</td>')
+            hrow.append('</th>')
         hlines.append(''.join(hrow))
-        hlines.append('</th>')
+        hlines.append('</tr>')
 
         if len(rows) > 1:
             for row in rows[1:]:
