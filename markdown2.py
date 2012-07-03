@@ -840,14 +840,14 @@ class Markdown(object):
             row = [c.strip() for c in re.split(r'(?<!\\)\|\|', line)]
             rows.append(row)
         #pprint(rows)
-        hlines = ['<table>', '<tbody>']
+        hlines = ['<table>','<thead>']
         hrow = ['<tr>']
         for cell in rows[0]:
             hrow.append('<th>')
             hrow.append(self._run_span_gamut(cell))
             hrow.append('</th>')
         hlines.append(''.join(hrow))
-        hlines.append('</tr>')
+        hlines.append('</tr>\n</thead>\n<tbody>')
 
         if len(rows) > 1:
             for row in rows[1:]:
