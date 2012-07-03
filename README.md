@@ -8,6 +8,7 @@ so you can paste it in some HTML code editor.
 3. after edit your markdown text,right click in the edit area,choose`Copy Markdown as HTML`
 
 ##How to use it
+when editing a markdown file,just right click anywhere in the edit area.and choose `Copy Markdown as HTML`
 ![how to use it](http://i.imgur.com/wSoJO.png)
 
 ##Feature
