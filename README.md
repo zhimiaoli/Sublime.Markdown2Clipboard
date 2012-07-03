@@ -7,6 +7,9 @@ so you can paste it in some HTML code editor.
 2. unzip it to you Sublime Text Package folder,(FYI: `Preferences/Browse Packages`)
 3. after edit your markdown text,right click in the edit area,choose`Copy Markdown as HTML`
 
+##How to use it
+![how to use it](http://i.imgur.com/wSoJO.png)
+
 ##Feature
 1. [footnotes](https://github.com/trentm/python-markdown2/wiki/footnotes) support
 2. [wiki table](https://github.com/trentm/python-markdown2/wiki/wiki-tables),though I made a little [change](http://timewilltell.me/node/50#fn-1) to this
