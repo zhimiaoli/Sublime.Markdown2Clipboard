@@ -22,6 +22,8 @@ this plugin is using [Markdown2](https://github.com/trentm/python-markdown2/) mo
 more info can be found on my [blog](http://timewilltell.me/node/50).
 
 ##changelog
+
 2012/11/5
+
 1. Added status message
 2. Support selection mode now, if you have selected some text,it will only convert seleted text now.
