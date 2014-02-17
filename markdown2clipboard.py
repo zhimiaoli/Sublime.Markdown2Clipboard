@@ -1,20 +1,36 @@
-import sublime, sublime_plugin
-import markdown2
+import sublime
+import sublime_plugin
+import sys
+
+def is_ST3():
+    ''' check if ST3 based on python version '''
+    version = sys.version_info
+    if isinstance(version, tuple):
+        version = version[0]
+    elif getattr(version, 'major', None):
+        version = version.major
+    return (version >= 3)
+
+if is_ST3():
+    from . import markdown2
+
+else:
+    import markdown2
 
 class m2c(sublime_plugin.WindowCommand):
     def run(self):
-		view = self.window.active_view()
-		if view:
-			if view.substr(view.sel()[0]):
-				contents = view.substr(view.sel()[0])
-				message = u"selection converted and copied to clipboard"
-			else:
-				contents = view.substr(sublime.Region(0, view.size()))
-				message = u"converted and copied to clipboard"
-	        md = markdown2.markdown(contents,extras=['footnotes','wiki-tables'])
-	        sublime.set_clipboard(md)
-	        sublime.status_message(message)
-	        
+        view = self.window.active_view()
+        if view:
+            if view.substr(view.sel()[0]):
+                contents = view.substr(view.sel()[0])
+                message = u"selection converted and copied to clipboard"
+            else:
+                contents = view.substr(sublime.Region(0, view.size()))
+                message = u"converted and copied to clipboard"
+            md = markdown2.markdown(contents,extras=['footnotes','wiki-tables'])
+            sublime.set_clipboard(md)
+            sublime.status_message(message)
+            
 class m2b(sublime_plugin.WindowCommand):
     def run(self):
         view = self.window.active_view()
